@@ -1,4 +1,16 @@
 .env
-.idea/
-# Maven target directory
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Maven target directory ###
 /target/
+
+### Mac OS ###
+.DS_Store
