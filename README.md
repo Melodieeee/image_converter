@@ -37,7 +37,7 @@ You can then see java application pop up and running at your machine.
 
 ## Application Instructions
 ### Step 1 - Convert Images to Text
-<img width="1042" alt="step1" src="src/readme_imgs/step1.png">
+<img width="800" alt="step1" src="src/readme_imgs/step1.png">
 
 1. Click on the "Select Input Folder" button to choose a folder containing the images you wish to convert to text. Supported formats include .pdf, .jpeg, .jpg, .png, .gif, .bmp. You can utilize the images and PDFs in the "src/test_files" folder for testing purposes.
 2. Click on the "Select a Output File" button to select a file where you want to save the text.
@@ -46,15 +46,16 @@ You can then see java application pop up and running at your machine.
    <img width="1042" alt="step1" src="src/readme_imgs/step1_output_csv.png">
 
 ### Step 2 - Schedule Appointments by Different Doctors
-<img width="1042" alt="step2" src="src/readme_imgs/step2.png">
+<img width="800" alt="step2" src="src/readme_imgs/step2.png">
 
 1. Choose the CSV file created in the previous step. You can use the "output.csv" file in the "src/test_outputs" folder for testing purposes.
 2. Click on the "Process" button to analyze the text and schedule appointments by different practitioners.
 3. You can view the appointments in the output files for different practitioners, formatted as illustrated below:
+
 <br> Practitioner 1:
-<img width="1042" alt="step2" src="src/readme_imgs/step2_output_csv_d1.png">
+<img width="800" alt="step2" src="src/readme_imgs/step2_output_csv_d1.png">
 <br> Practitioner 2:
-<img width="1042" alt="step2" src="src/readme_imgs/step2_output_csv_d2.png">
+<img width="800" alt="step2" src="src/readme_imgs/step2_output_csv_d2.png">
 
 #### Note:
 - You can use the images and pdf in the "src/test_files" folder for testing.
