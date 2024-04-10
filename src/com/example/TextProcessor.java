@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example;
 
 import org.apache.commons.csv.CSVPrinter;
 
@@ -67,11 +67,11 @@ public abstract class TextProcessor {
             } else if (line.matches("^\\s*\\w+\\s+(0?[1-9]|[12]\\d|3[01])\\s*[,.]?\\s*$")) { //MMMM d,
                                                                                                 // yyyy (the other line)
                 String date = line.trim();
-                System.out.println("date: " + date);
+                //System.out.println("date: " + date);
                 for (int j = i + 1; j < lines.size(); j++) {
                     if (lines.get(j).matches("^\\s*\\d{4}\\s*$")) {
                         String year = lines.get(j).trim();
-                        System.out.println("year: " + year);
+                        //System.out.println("year: " + year);
                         visitDates.add(date + " " + year);
                     }
                 }
@@ -87,8 +87,10 @@ public abstract class TextProcessor {
 
         for (int i = 0; i < formattedDates.size(); i++) {
             String dateStr = formattedDates.get(i);
-            String fee = (i < convertedFees.size()) ? convertedFees.get(i) : "";
-            csvPrinter.printRecord(dr, patientNumber, patientName, dateStr, startTime, fee, dateStr, endTime);
+            //TODO: Error: patientNumber is not an integer.
+            //Error occurred while trying to recognize text from the image: Index 1 out of bounds for length 1
+            String duration = convertedFees.get(i*2+1);
+            csvPrinter.printRecord(dr, patientNumber, patientName, dateStr, startTime, duration, dateStr, endTime);
         }
     }
 
@@ -140,54 +142,22 @@ public abstract class TextProcessor {
         List<String> convertedFees = new ArrayList<>();
         for (String fee : fees) {
             fee = fee.replace("$","");
-            System.out.println(fees.size() + " " + fee);
+            //System.out.println(fees.size() + " " + fee);
             String convertedFee;
             switch (fee) {
-                case "25.00":
-                    convertedFee = "10";
-                    break;
-                case "30.00":
-                    convertedFee = "15";
-                    break;
-                case "40.00":
-                    convertedFee = "20";
-                    break;
-                case "44.00":
-                    convertedFee = "25";
-                    break;
-                case "50.00":
-                    convertedFee = "30";
-                    break;
-                case "70.00":
-                case "60.00":
-                case "65.00":
-                case "84.00":
-                case "89.00":
-                case "89.25":
-                    convertedFee = "50";
-                    break;
-                case "75.00"://
-                    convertedFee = "60";
-                    break;
-                case "90.00"://
-                    convertedFee = "90";
-                    break;
-                case "96.00":
-                case "105.00":
-                case "112.50":
-                case "114.00":
-                case "126.00":
-                case "133.00":
-                case "134.00":
-                    convertedFee = "75";
-                    break;
-                case "140.00":
-                case "178.00":
-                    convertedFee = "100";
-                    break;
-                default:
-                    convertedFee = "Unknown";
-                    break;
+                case "25.00" -> convertedFee = "10";
+                case "30.00" -> convertedFee = "15";
+                case "40.00" -> convertedFee = "20";
+                case "44.00" -> convertedFee = "25";
+                case "50.00" -> convertedFee = "30";
+                case "70.00", "60.00", "65.00", "84.00", "89.00", "89.25" -> convertedFee = "50";
+                case "75.00" ->//
+                        convertedFee = "60";
+                case "90.00" ->//
+                        convertedFee = "90";
+                case "96.00", "105.00", "112.50", "114.00", "126.00", "133.00", "134.00" -> convertedFee = "75";
+                case "140.00", "178.00" -> convertedFee = "100";
+                default -> convertedFee = "Unknown";
             }
 
             convertedFees.add(convertedFee);

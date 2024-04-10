@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
@@ -14,7 +14,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -79,8 +78,8 @@ public class TimeFiller {
 
                     currentTime = endTime;
 
-                    System.out.println("Processing " + appointment.getSubject() + " 's data ...");
-//                    System.out.println("Doctor: " + doctorName + " ,Patient Number: " + appointment.patientNumber + " ,Subject: " + appointment.getSubject() +" ,Start Date: " + date + " ,Start Time: " + appointment.getStartTime() + " ,Duration:" + appointment.getDuration() +", End Time: " + endTime);
+                    //System.out.println("Processing " + appointment.getSubject() + " 's data ...");
+                    //System.out.println("Doctor: " + doctorName + " ,Patient Number: " + appointment.patientNumber + " ,Subject: " + appointment.getSubject() +" ,Start Date: " + date + " ,Start Time: " + appointment.getStartTime() + " ,Duration:" + appointment.getDuration() +", End Time: " + endTime);
                 }
             });
             System.out.println("Completed!");

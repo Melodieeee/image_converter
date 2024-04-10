@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example;
 
 import java.util.prefs.Preferences;
 

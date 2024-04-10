@@ -1,1 +1,4 @@
 .env
+.idea/
+# Maven target directory
+/target/

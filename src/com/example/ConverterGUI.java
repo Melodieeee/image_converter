@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -55,7 +55,7 @@ public class ConverterGUI extends JFrame {
 
     private ConverterGUI(String lastUsedFolderPath, String lastUsedFilePath) {
         // set title and size
-        setTitle("PDF to CSV Converter");
+        setTitle("Image Converter");
         setSize(370, 230);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -68,7 +68,7 @@ public class ConverterGUI extends JFrame {
         JButton step1InputSelectButton = new JButton("Select Input Folder");
         JButton step1OutputSelectButton = new JButton("Select a Output File");
         JButton step2InputSelectButton = new JButton("Select a Input File");
-        JLabel step1HeaderLabel = new JLabel("Step 1: Convert PDF to CSV");
+        JLabel step1HeaderLabel = new JLabel("Step 1: Convert PDF/Images to CSV");
         JLabel step1ContentLabel = new JLabel("Select input folder and output file to convert");
         JLabel step2HeaderLabel = new JLabel("Step 2: Arrange Appointment Time");
         JLabel step2ContentLabel = new JLabel("After converting to csv, select the csv file to process");
@@ -156,7 +156,7 @@ public class ConverterGUI extends JFrame {
     public static void main(String[] args) {
 
         try {
-            // TODO: YOU CAN CHANG LOOK AND FEEL HERE
+            // TODO: YOU CAN CHANGE LOOK AND FEEL HERE
             // flatlaf: FlatLightLaf(), FlatDarkLaf()、FlatIntelliJLaf()
             UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (UnsupportedLookAndFeelException e) {
